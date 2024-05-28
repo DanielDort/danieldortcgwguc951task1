@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+<!--Introductory message and error message -->
+  <category>
+    <pattern>*</pattern>
+    <template>I'm sorry, I don't understand. Please press return to begin again.
+    <reply>
+        <text>Return</text>
+        <postback>Start</postback>
+    </reply>
+    </template>
+  </category>
+  
+  <category>
+      <pattern>^ hi ^</pattern>
+      <template>
+              Hello! Please press Start to begin:
+              <reply>
+        <text>Start</text>
+        <postback>Start</postback>
+    </reply>
+      </template>
+  </category>
+  
+ <!--Decision Tree -->
+  <category>
+      <pattern>Start</pattern>
+      <template>
+          Which do you prefer?
+          <reply>
+              <text>Programming</text>
+              <postback>C1</postback>
+          </reply>
+        <reply>
+            <text>Designing</text>
+            <postback>C2</postback>
+        </reply>
+      </template>
+  </category>
+  
+    <category>
+      <pattern>C1</pattern>
+      <template>
+          Since you prefer Programming, I will have you look at some more options. Do you prefer working on Websites, or other applications?
+          <reply>
+              <text>Websites</text>
+              <postback>C3</postback>
+          </reply>
+        <reply>
+            <text>Other applications</text>
+            <postback>C6</postback>
+        </reply>
+      </template>
+  </category>
+  
+      <category>
+      <pattern>C2</pattern>
+      <template>
+          Since you prefer Designing, I will have you look at some more options. Do you prefer working on Websites, or other applications?
+          <reply>
+              <text>Websites</text>
+              <postback>C5</postback>
+          </reply>
+        <reply>
+            <text>Other Applications</text>
+            <postback>C4</postback>
+        </reply>
+      </template>
+  </category>
+  
+    <category>
+      <pattern>C3</pattern>
+      <template> Since you prefer programming and prefer working on websites, you should consdier a career as a Back-end Web Developer!
+          <reply>
+              <text>Return</text>
+              <postback>Start</postback>
+          </reply>
+      </template>
+  </category>
+  
+    <category>
+      <pattern>C4</pattern>
+      <template> Since you prefer designing and like working on other applications, you should consdier a career in UI/GUI Developer!
+          <reply>
+              <text>Return</text>
+              <postback>Start</postback>
+          </reply>
+      </template>
+  </category>
+  
+    <category>
+      <pattern>C5</pattern>
+      <template> Since you prefer designing and like working on Websites, you should consdier a career in Front-end Web Engineering!
+          <reply>
+              <text>Return</text>
+              <postback>Start</postback>
+          </reply>
+      </template>
+  </category>
+  
+      <category>
+      <pattern>C6</pattern>
+      <template>
+          Since you prefer programming and like working on other applications, I will have you look at some more options. Do you prefer constructive, or destructive processes?
+          <reply>
+              <text>Constructive</text>
+              <postback>C7</postback>
+          </reply>
+        <reply>
+            <text>Destructive</text>
+            <postback>C8</postback>
+        </reply>
+      </template>
+  </category>
+  
+      <category>
+      <pattern>C7</pattern>
+      <template> Since you prefer programming other applications, and prefer constructive processes, you should consdier a career as a Software Developer!
+          <reply>
+              <text>Return</text>
+              <postback>Start</postback>
+          </reply>
+      </template>
+  </category>
+  
+      <category>
+      <pattern>C8</pattern>
+      <template> Since you prefer programming other applications, and prefer destructive processes, you should consdier a career as a QA Specialist!
+          <reply>
+              <text>Return</text>
+              <postback>Start</postback>
+          </reply>
+      </template>
+  </category>
+  
+</aiml>
